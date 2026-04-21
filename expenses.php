@@ -1,8 +1,10 @@
 <?php
 require_once 'config/session.php';
-requireLogin();
+allowGuestAccess();
 
 $user = getCurrentUser();
+$isGuest = isGuest();
+$activePage = 'expenses';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,43 +16,12 @@ $user = getCurrentUser();
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/dashboard.css">
     <link rel="stylesheet" href="assets/css/expenses.css">
+    <link rel="stylesheet" href="assets/css/auth.css">
 </head>
-<body>
+<body data-guest-mode="<?php echo $isGuest ? 'true' : 'false'; ?>">
     <div class="dashboard-layout">
         <!-- Sidebar -->
-        <aside class="sidebar">
-            <div class="sidebar-header">
-                <div class="sidebar-logo">💰 ExpenseTracker</div>
-            </div>
-
-            <nav class="sidebar-nav">
-                <a href="dashboard.php" class="nav-item">
-                    <span class="nav-icon">📊</span>
-                    Dashboard
-                </a>
-                <a href="expenses.php" class="nav-item active">
-                    <span class="nav-icon">💳</span>
-                    Expenses
-                </a>
-                <a href="categories.php" class="nav-item">
-                    <span class="nav-icon">📁</span>
-                    Categories
-                </a>
-                <a href="reports.php" class="nav-item">
-                    <span class="nav-icon">📈</span>
-                    Reports
-                </a>
-            </nav>
-
-            <div class="sidebar-footer">
-                <div class="text-sm text-muted mb-2">
-                    Logged in as <strong><?php echo htmlspecialchars($user['username']); ?></strong>
-                </div>
-                <a href="api/auth.php?action=logout" class="btn btn-outline w-full btn-sm">
-                    Logout
-                </a>
-            </div>
-        </aside>
+        <?php include 'config/sidebar.php'; ?>
 
         <!-- Main Content -->
         <main class="main-content">
@@ -328,6 +299,7 @@ $user = getCurrentUser();
 
     <script src="assets/js/theme.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/guest.js"></script>
     <script src="assets/js/expenses.js"></script>
 </body>
 </html>

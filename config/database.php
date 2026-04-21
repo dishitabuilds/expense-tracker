@@ -4,10 +4,12 @@
  * Update these credentials to match your XAMPP MySQL setup
  */
 
-define('DB_HOST', 'localhost');
+// XAMPP defaults (adjust if you changed your MySQL settings)
+define('DB_HOST', '127.0.0.1');
 define('DB_USER', 'root');
 define('DB_PASS', '');
 define('DB_NAME', 'personal_expense_tracker');
+
 
 /**
  * Create database connection

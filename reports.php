@@ -2,10 +2,13 @@
 /**
  * Reports Page
  * Advanced expense reporting with charts, data tables, and export
+ * REQUIRES LOGIN — not available in guest mode
  */
 
 require_once 'config/session.php';
-requireLogin();
+requireLoginForFeature('Reports & Analytics');
+
+$activePage = 'reports';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,43 +18,15 @@ requireLogin();
     <title>Reports - Personal Expense Tracker</title>
     <link rel="stylesheet" href="assets/css/theme.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dashboard.css">
     <link rel="stylesheet" href="assets/css/reports.css">
+    <link rel="stylesheet" href="assets/css/auth.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 </head>
 <body>
-    <div class="app-container">
+    <div class="dashboard-layout">
         <!-- Sidebar -->
-        <aside class="sidebar">
-            <div class="sidebar-header">
-                <h2 class="sidebar-title">💰 Expense Tracker</h2>
-            </div>
-            
-            <nav class="sidebar-nav">
-                <a href="dashboard.php" class="nav-item">
-                    <span class="nav-icon">📊</span>
-                    Dashboard
-                </a>
-                <a href="expenses.php" class="nav-item">
-                    <span class="nav-icon">💳</span>
-                    Expenses
-                </a>
-                <a href="categories.php" class="nav-item">
-                    <span class="nav-icon">📁</span>
-                    Categories
-                </a>
-                <a href="reports.php" class="nav-item active">
-                    <span class="nav-icon">📈</span>
-                    Reports
-                </a>
-            </nav>
-            
-            <div class="sidebar-footer">
-                <div class="user-info">
-                    <span class="user-name"><?php echo htmlspecialchars($_SESSION['username']); ?></span>
-                    <a href="api/auth.php?action=logout" class="btn btn-sm btn-outline">Logout</a>
-                </div>
-            </div>
-        </aside>
+        <?php include 'config/sidebar.php'; ?>
 
         <!-- Main Content -->
         <main class="main-content">
