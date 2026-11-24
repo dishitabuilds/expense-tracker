@@ -1,3 +1,13 @@
+# Expense Tracker
+
+**Live app:** [expenses-tracker.kesug.com](https://expenses-tracker.kesug.com/)
+
+> **Repository availability:** This repository currently contains only this README.
+> The PHP application, database SQL, Python/Flask ML code, Spark jobs and screenshots
+> described below are not included in a fresh clone. The following technical
+> documentation describes the full project; its setup steps require the separate
+> application source and assets. A live deployment does not supply those files.
+
 <p align="center">
   <img src="https://img.shields.io/badge/PHP-8.x-777BB4?style=for-the-badge&logo=php&logoColor=white" />
   <img src="https://img.shields.io/badge/MySQL-8.0-4479A1?style=for-the-badge&logo=mysql&logoColor=white" />
@@ -5,7 +15,7 @@
   <img src="https://img.shields.io/badge/Apache%20Spark-3.5-E25A1C?style=for-the-badge&logo=apachespark&logoColor=white" />
   <img src="https://img.shields.io/badge/scikit--learn-1.3-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white" />
   <img src="https://img.shields.io/badge/Flask-3.0-000000?style=for-the-badge&logo=flask&logoColor=white" />
-  <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" />
+
 </p>
 
 <h1 align="center">💰 AI-Powered Personal Expense Tracker</h1>
@@ -165,7 +175,7 @@ The **AI-Powered Personal Expense Tracker** is a comprehensive financial managem
 
 ---
 
-## 🚀 Quick Start
+## 🚀 Full application setup (source required)
 
 ### Prerequisites
 
@@ -177,7 +187,7 @@ The **AI-Powered Personal Expense Tracker** is a comprehensive financial managem
 ### 1. Clone & Setup
 
 ```bash
-git clone https://github.com/Unknown-user-555/expense-tracker.git
+git clone https://github.com/dishitabuilds/expense-tracker.git
 # Place in your XAMPP htdocs directory as 'personal_expense'
 ```
 
@@ -694,9 +704,8 @@ expense-tracker/
 
 ## 📄 License
 
-This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
-
----
+No license file is currently committed in this repository. Confirm the intended
+license before redistributing the project source.
 
 ## 👨‍💻 Author
 
